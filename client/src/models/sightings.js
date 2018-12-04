@@ -16,6 +16,7 @@ Sightings.prototype.bindEvents = function () {
 };
 
 Sightings.prototype.addData = function (newData) {
+    debugger;
   this.request.post(newData)
   .then((sightings) => {
     PubSub.publish('Sightings:data-loaded', sightings);

@@ -30,9 +30,8 @@ const createRouter = function (collection) {
   });
 
   router.post('/', (req, res) => {
-    const newData = req.body;
     collection
-    .insertOne(newData)
+    .insertOne(req.body)
     .then(() => collection.find().toArray())
     .then((docs) => res.json(docs))
     .catch((err) => {
