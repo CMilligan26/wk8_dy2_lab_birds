@@ -14,4 +14,13 @@ RequestHelper.prototype.delete = function (id) {
     .then((response) => response.json());
 };
 
+RequestHelper.prototype.post = function (bird) {
+  return fetch(this.url, {
+    method: 'POST',
+    body: JSON.stringify(bird),
+    header: {'Content-Type': 'application/json'}
+  })
+    .then((response) => response.json());
+};
+
 module.exports = RequestHelper;
